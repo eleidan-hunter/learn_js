@@ -6,6 +6,68 @@
     <title>Document</title>
 </head>
 <body>
+    <script>
+
+        // const start = 0;
+        // const end = 10;
+
+        // let arr = [];
+        // for (let i = start; i < end; i++){
+        //     arr.push(Math.floor(Math.random() * 10));
+        // }
+        // arr.sort();
+
+        // for (i = start; i < end; i++){
+        //     // let num = Math.round(1 + Math.random() * (9 - 1));
+        //     let num = arr[i];
+        //     document.write(`<p style="padding-left:${num}0px">${num}</p>`);
+        // }
+
+        //=============================
+        // const rnd = Math.floor(Math.random() * 10)
+
+        // while(true){
+        //     if (rnd == promt('enter your number')){
+        //         document.write(`<h1>win</h1>`);
+        //         break;
+        //     }
+        // }
+
+        // ========================
+        
+        let arr = [];
+        
+        for (let i = 0; i < 10; i++){
+            arr.push(Math.floor(Math.random() * 100));
+        }   
+
+        while(true) {
+            let end = true;
+
+            for( let i = 0; i <10; i++){
+                const a = arr[i];
+                const b = arr[i + 1];
+
+                if (a > b){
+                    arr[i] = b;
+                    arr[i + 1] = a;
+
+                    end = false;
+                }
+                
+            }
+
+            if(end){
+                break;
+            }
+        }
+
+        console.log(arr); 
+        // 
+
+        
+
+    </script>
     <script src="main.js"></script>
 </body>
 </html>

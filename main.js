@@ -53,32 +53,59 @@
 
 // console.log('50: ', fifth_q, '20: ', twenty_q, '10 :', ten_q, 'rest: ', rest);
 
-// random numbers generator
+// =======================
+// // random numbers generator
 
-let num_1 = + prompt();
-let num_2 = + prompt();
-let min = num_1;
-let max = num_2;
+// let num_1 = + prompt();
+// let num_2 = + prompt();
+// let min = num_1;
+// let max = num_2;
 
-// verification min/max value
-if (num_1 < num_2){
-	min = num_1;
-	max = num_2;
-} else {
-	min = num_2;
-	max = num_1;
-}
+// // verification min/max value
+// if (num_1 < num_2){
+// 	min = num_1;
+// 	max = num_2;
+// } else {
+// 	min = num_2;
+// 	max = num_1;
+// }
 
-console.log('min:', min);
-console.log('max:', max);
+// console.log('min:', min);
+// console.log('max:', max);
 
-// end verification min/max value
+// // end verification min/max value
 
-// random number
-let range = min + Math.random() * (max - min);
-console.log('range: ', range);
+// // random number
+// let range = min + Math.random() * (max - min);
+// console.log('range: ', range);
 
-let res = Math.round(range);
-console.log('res: ', res);
+// let res = Math.round(range);
+// console.log('res: ', res);
 
-// end random number
+// // end random number
+
+// ========================
+// true - false
+
+// let range = 1 + Math.random() * (9 - 1);
+// let num = Math.round(range);
+// console.log('number: ', num);
+
+// let userNumber = prompt('Enter your number between 1 and 9:');
+
+// if (userNumber >=1 && userNumber <= 9 ){
+//     if (userNumber === num) {
+//         alert('You win!');
+//     } else {
+//         alert('You lose :(');
+//     }
+// } else {
+//     alert('You enter wrong number!');
+// }
+
+// end true - false
+
+// for (let i = 10; -- i;){
+//     console.log(i); //9 8 7 6 5 4 3 2 2 1
+// }
+
