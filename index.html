@@ -2,11 +2,61 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=, initial-scale=1.0">
 	<title>Document</title>
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+	<div class="wrapper">
+			<div class="inner">
+					
+				<script>
+					let arr = [];
+					
+					let sum = 0;
+					for (let i = 0; i < 10; i++){
+						arr.push(Math.floor(Math.random() * 100));
+						sum += arr[i];
+					}
+
+					for (let i = 0; i < 10; i++){
+						document.write(`<div class="col" style="height:${arr[i]}%"><p>${arr[i]}%</p></div>`)
+					}
+
+					while(true) {
+						let end = true;
+						for( let i = 0; i < 10; i++ ){
+							const a = arr[i];
+							const b = arr[i + 1];
+
+							if (a > b){
+								arr[i] = b;
+								arr[i + 1] = a;
+
+								end = false;
+							}
+								
+						}
+
+						if(end){
+							break;
+						}
+					}
+
+					let min = arr[0];
+					let max = arr[arr.length - 1];
+					let avg = sum / arr.length
+					document.write(`
+					<div class="line max" style="bottom:${max}%"> <p> <span> max value: ${max} </span> </p> </div>
+					<div class="line min" style="bottom:${min}%"> <p> <span>min value: ${min} </span></p> </div>
+					<div class="line avg" style="bottom:${avg}%"> <p> <span>average value: ${avg} </span></p> </div>
+					`)
+
+				</script>
+
+		</div>
+	</div>
 	<script src="main.js"></script>
 </body>
 </html>
