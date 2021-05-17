@@ -53,6 +53,67 @@
 
 // console.log('50: ', fifth_q, '20: ', twenty_q, '10 :', ten_q, 'rest: ', rest);
 
+// with circle
+				// let enter = prompt();
+				// console.log('enter:', enter);
+
+				// let bills = [
+				// 	50,
+				// 	20,
+				// 	10
+				// ]
+
+				// let count = [
+				// 	0,
+				// 	0,
+				// 	0
+				// ]
+
+				// for(let i = 0; i < 3; i++) {
+					
+				// 	count[i]=parseInt(enter / bills[i]);
+				// 	console.log('bills: ',count[i]);
+				// 	let rest = enter - count[i] * bills[i];
+
+				// 	enter = rest;
+				// 	console.log('rest: ',rest);
+					
+				// }
+
+				// =====
+				// second
+
+				// let sum = 555;
+				// let $ = [50, 20, 10];
+				// let mas_num = [];
+
+				// for (let i = 0; i < $.length; i++){
+				// 	mas_num.push(Math.floor(sum/$[i]));
+				// 	sum -= mas_num[i] * $[i];
+				// }
+
+				// console.log(... mas_num);
+
+				// =============
+				// true - false
+
+				// let range = 1 + Math.random() * (1000 - 1);
+				// let num = Math.round(range);
+				// console.log('number: ', num);
+
+				// let userNumber = prompt('Enter your number between 1 and 1000:');
+				// console.log('user number: ', userNumber)
+
+				// while(num != userNumber){
+				// 	if( num > userNumber ){
+				// 		userNumber = prompt('Your number is less. Try again');
+				// 	} else if ( num < userNumber){
+				// 		userNumber = prompt('Your number is more. Try again');
+				// 	} else if (num == userNumber){
+				// 		alert('You win!');
+				// 		break;
+				// 	}
+				// }
 
 
 // =======================
@@ -171,5 +232,49 @@
 
 		// console.log(arr); 
 		//
+
+		//==============================
+		// diagrama
+		// 
+		// let arr = [];
+		
+		// let sum = 0;
+		// for (let i = 0; i < 10; i++){
+		// 	arr.push(Math.floor(Math.random() * 100));
+		// 	sum += arr[i];
+		// }
+
+		// for (let i = 0; i < 10; i++){
+		// 	document.write(`<div class="col" style="height:${arr[i]}%"><p>${arr[i]}%</p></div>`)
+		// }
+
+		// while(true) {
+		// 	let end = true;
+		// 	for( let i = 0; i < 10; i++ ){
+		// 		const a = arr[i];
+		// 		const b = arr[i + 1];
+
+		// 		if (a > b){
+		// 			arr[i] = b;
+		// 			arr[i + 1] = a;
+
+		// 			end = false;
+		// 		}
+					
+		// 	}
+
+		// 	if(end){
+		// 		break;
+		// 	}
+		// }
+
+		// let min = arr[0];
+		// let max = arr[arr.length - 1];
+		// let avg = sum / arr.length
+		// document.write(`
+		// <div class="line max" style="bottom:${max}%"> <p> <span> max value: ${max} </span> </p> </div>
+		// <div class="line min" style="bottom:${min}%"> <p> <span>min value: ${min} </span></p> </div>
+		// <div class="line avg" style="bottom:${avg}%"> <p> <span>average value: ${avg} </span></p> </div>
+		// `)
 
 
