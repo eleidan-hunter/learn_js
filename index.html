@@ -9,168 +9,288 @@
 <body>
 
 	<div class="wrapper">
-		<div class="inner">
+		<!-- <script>
+			document.write(
+				`
+				<div class='clock'>
+					<div class='arrow arrowHours'><span></span></div>
+					<div class='arrow arrowMinutes'><span></span></div>
+					<div class='arrow arrowSeconds'><span></span></div>
+				</div>
+				`
+			)
 
-			<script>
-				// ===============
-				// tic tac toe
-      
-				let field = [
-					[' ', ' ', ' '],
-					[' ', ' ', ' '],
-					[' ', ' ', ' ']
-				]
-				let sb = 'x'
-				
-				for( let m = 0; m < 9; m++){
-					let html = '';
-
-					let playerI = +prompt ('enter row number. Player: ' + sb)
-					let playerJ = +prompt ('enter column number. Player: ' + sb)
-
-					field[playerI][playerJ] = sb;
-
-					if( sb === 'x'){
-						sb = 'o';
-					} else {
-						sb = 'x';
-					}
-
-					for( let i = 0; i < field.length; i++){
-						let row = '|'
-
-						for( let j = 0; j < field[i].length; j++){
-							row += field[i][j] + '|';
+			function animArrow(name, from, to){
+					return`
+					<style>
+						@keyframes ${name}{
+							from{
+								transform: rotate(${from}deg);
+							}
+							to {
+								transform: rotate(${to}deg);
+							}
 						}
-						row += '\n+'
 
-						for( let j = 0; j < field[i].length; j++){
-							row += '-' + '+';
-						}
-						row += '\n'
-						html += row
-					}
+					</style>
+					`;
+			}
 
-					console.clear();
-					console.log(html);
+			const dataTime = new Date();
+			let h = dataTime.getHours();
+			let m = dataTime.getMinutes();
+			let s = dataTime.getSeconds();
+
+			h = h > 12? h - 12: h;
+
+			document.write(animArrow('hourSeconds', 6 * s, 360 + 6 * s));
+			document.write(animArrow('hourMinutes', 6 * m, 360 + 6 * m + .1));
+			document.write(animArrow('hourArrow', 30 * h + m * .5, 360 + 30 * h + m * .5));
+
+
+			// document.write(
+					
+			// 	`
+			// 	<style>
+			// 	@keyframes hourArrow{
+			// 		from{
+			// 			transform: rotate(${30 * h + m *.5}deg)
+			// 		}
+			// 		to {
+			// 			transform: rotate(${360+ 30 * h + m *.5}deg)
+			// 		}
+			// 	}
+			// 	@keyframes hourMinutes{
+			// 		from{
+			// 			transform: rotate(${6 * m}deg)
+			// 		}
+			// 		to {
+			// 			transform: rotate(${360 + 6 * m + .1}deg)
+			// 		}
+			// 	}
+			// 	@keyframes hourSeconds{
+			// 		from{
+			// 			transform: rotate(${6 * s}deg)
+			// 		}
+			// 		to {
+			// 			transform: rotate(${360 + 6 * s}deg)
+			// 		}
+			// 	}
+			// 	</style>
+
+			// 	`
+			// )
+		</script> -->
+		<!-- <div class="inner">
+
+					
+
+					<script>
+							// ===============
+							// tic tac toe
+		
+							// let field = [
+							// 	[' ', ' ', ' '],
+							// 	[' ', ' ', ' '],
+							// 	[' ', ' ', ' ']
+							// ]
+							// let sb = 'x'
+							
+							// for( let m = 0; m < 9; m++){
+							// 	let html = '';
+
+							// 	let playerI = +prompt ('enter row number. Player: ' + sb)
+							// 	let playerJ = +prompt ('enter column number. Player: ' + sb)
+
+							// 	field[playerI][playerJ] = sb;
+
+							// 	if( sb === 'x'){
+							// 		sb = 'o';
+							// 	} else {
+							// 		sb = 'x';
+							// 	}
+
+							// 	for( let i = 0; i < field.length; i++){
+							// 		let row = '|'
+
+							// 		for( let j = 0; j < field[i].length; j++){
+							// 			row += field[i][j] + '|';
+							// 		}
+							// 		row += '\n+'
+
+							// 		for( let j = 0; j < field[i].length; j++){
+							// 			row += '-' + '+';
+							// 		}
+							// 		row += '\n'
+							// 		html += row
+							// 	}
+
+							// 	console.clear();
+							// 	console.log(html);
+							// }
+
+							// ===============
+
+							// random numbers
+							// === first ===
+
+							// function randomInt(num1 = 0, num2 = 0){
+									
+							// 	// verification min/max value
+							// 	if (num1 < num2){
+							// 		min = num1;
+							// 		max = num2;
+							// 	} else {
+							// 		min = num2;
+							// 		max = num1;
+							// 	}
+							// 	let random = Math.round(min + Math.random() * (max - min));
+
+							// 	return random;
+							// }
+
+							// let result = randomInt(-5, 5);
+							// console.log('result: ',result);
+
+							// === second ===
+
+							// function randomInt(num1 = 0, num2 = 0, f = null){
+									
+							// 	if( typeof f === 'number') {
+							// 		if (num1 < num2) {
+							// 			return +( a + (b - a) * Math.random()).toFixed(f);
+							// 		}
+							// 		return +( b + (a - b) * Math.random()).toFixed(f);
+							// 	}
+
+							// 	if (num1 < num2) {
+							// 		return Math.raund( a + (b - a) * Math.random);
+							// 	}
+							// 	return Math.raund( b + (a - b) * Math.random);
+
+							// }
+
+							// let result = randomInt(-5, 5);
+							// console.log('result: ',result);
+
+							// === homework ===
+
+							// function randomInt(min = 0, max = 0){
+
+							// 	let arr = []
+							// 	let obj = {}
+									
+							// 	let sum = 0
+							// 	let range = Math.round(min + Math.random() * (max - min))
+
+							// 	for (let i = 0; i < range; i ++){
+							// 		arr.push(Math.round(1 + Math.random() * (100 - 1)))
+							// 		sum += arr[i]
+							// 	}	
+									
+							// 	//===
+							// 	while(true) {
+							// 		let end = true;
+
+							// 		for( let i = 0; i <range; i++){
+							// 				let a = arr[i];
+							// 				let b = arr[i + 1];
+
+							// 				if (a > b){
+							// 						arr[i] = b;
+							// 						arr[i + 1] = a;
+																			
+							// 						end = false;
+							// 				}
+							// 		}
+
+							// 		if(end){
+							// 				break;
+							// 		}
+							// 	}
+							// 	//===
+
+							// 	for( let i = 0; i <range; i++){
+							// 		let a = arr[i];
+							// 		let b = arr[i + 1];
+							// 		let objQ = 1
+							// 		// console.log('arr[i] :', arr[i])
+							// 		// console.log('arr[i+1] :', arr[i+1])
+							// 		if (a != b) {
+							// 			obj[arr[i]] = objQ
+							// 			// obj[arr[i]] = objQ.push(arr[i])
+							// 		} else {
+							// 			obj[arr[i]] = objQ++
+							// 		}
+							// 		// console.log('objQ :', objQ)
+											
+							// 		// obj[arr[i]] += arr[i]
+							// 	}
+
+							// 	let average = sum / arr.length
+							// 	let result = {
+							// 		'arr' : arr,
+							// 		'sum: ' : sum,
+							// 		'average: ' : average,
+							// 		'obj: ' : obj
+							// 	}
+
+							// 	return result
+							// }
+
+							// let res = randomInt(1000, 5000);
+							// console.log('res: ', res)
+					</script>
+			</div> -->
+	
+		<script>
+			// const a = ['bob', 'mark', 'jack', 'kel'];
+			let arr = [];
+			for (let i = 0; i < 100; i++){
+				arr.push(Math.floor(Math.random() * 100));
+			}
+			//way 1
+			//a.forEach(() => {})
+			//way 2
+			//a.forEach(function(){})
+			//way 3
+			//function f1(){}
+			//a.forEach(f1)
+
+			arr.forEach((element, index, array) => {
+				if (element % 3 === 0 && index % 3 === 0){
+					console.log('element',element, 'index',index);
 				}
 
-				// ===============
 
-				// random numbers
-				// === first ===
+				
+				// if(index % 2 == 0){
+				// 	console.log(element)
+				// 	console.log(new Date);
+				// };
 
-				// function randomInt(num1 = 0, num2 = 0){
-					
-				// 	// verification min/max value
-				// 	if (num1 < num2){
-				// 		min = num1;
-				// 		max = num2;
-				// 	} else {
-				// 		min = num2;
-				// 		max = num1;
-				// 	}
-				// 	let random = Math.round(min + Math.random() * (max - min));
+				// // console.log(dataTime);
+			});
 
-				// 	return random;
-				// }
+			// a.map
+			// a.reduce
+			// a.filter
+			// a.forEach
 
-				// let result = randomInt(-5, 5);
-				// console.log('result: ',result);
+			// a.some
+			// a.every
+			// a.find
+			
 
-				// === second ===
+			// a.slice
+			// a.pop
+			// a.push
+			// a.shift
+			// a.unshift
 
-				// function randomInt(num1 = 0, num2 = 0, f = null){
-					
-				// 	if( typeof f === 'number') {
-				// 		if (num1 < num2) {
-				// 			return +( a + (b - a) * Math.random()).toFixed(f);
-				// 		}
-				// 		return +( b + (a - b) * Math.random()).toFixed(f);
-				// 	}
 
-				// 	if (num1 < num2) {
-				// 		return Math.raund( a + (b - a) * Math.random);
-				// 	}
-				// 	return Math.raund( b + (a - b) * Math.random);
-
-				// }
-
-				// let result = randomInt(-5, 5);
-				// console.log('result: ',result);
-
-				// === homework ===
-
-				// function randomInt(min = 0, max = 0){
-
-				// 	let arr = []
-				// 	let obj = {}
-					
-				// 	// let min = 10
-				// 	// let max = 50
-				// 	let sum = 0
-				// 	let range = Math.round(min + Math.random() * (max - min))
-
-				// 	for (let i = 0; i < range; i ++){
-				// 		arr.push(Math.round(1 + Math.random() * (100 - 1)))
-				// 		sum += arr[i]
-				// 	}	
-					
-				// 	//===
-				// 	while(true) {
-				// 		let end = true;
-
-				// 		for( let i = 0; i <range; i++){
-				// 				let a = arr[i];
-				// 				let b = arr[i + 1];
-
-				// 				if (a > b){
-				// 						arr[i] = b;
-				// 						arr[i + 1] = a;
-										
-				// 						end = false;
-				// 				}
-				// 		}
-
-				// 		if(end){
-				// 				break;
-				// 		}
-				// 	}
-				// 	//===
-
-				// 	for( let i = 0; i <range; i++){
-				// 		let a = arr[i];
-				// 		let b = arr[i + 1];
-				// 		let objQ = 1
-				// 		// console.log('arr[i] :', arr[i])
-				// 		// console.log('arr[i+1] :', arr[i+1])
-				// 		if (a != b) {
-				// 			obj[arr[i]] = objQ
-				// 			// obj[arr[i]] = objQ.push(arr[i])
-				// 		} else {
-				// 			obj[arr[i]] = objQ++
-				// 		}
-				// 		// console.log('objQ :', objQ)
-						
-				// 		// obj[arr[i]] += arr[i]
-				// 	}
-
-				// 	let average = sum / arr.length
-				// 	let result = {
-				// 		'arr' : arr,
-				// 		'sum: ' : sum,
-				// 		'average: ' : average,
-				// 		'obj: ' : obj
-				// 	}
-
-				// 	return result
-				// }
-
-				// let res = randomInt(1000, 5000);
-				// console.log('res: ', res)
-			</script>
+		</script>
 		</div>
-	</div>
 	<script src="main.js"></script>
 </body>
 </html>
