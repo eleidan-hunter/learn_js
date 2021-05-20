@@ -10,6 +10,13 @@
 4. юзер вводит три числа, вывести кратные этим числам
 
 if (element % 3 === 0 && index % 3 === 0){
-					console.log('element',element, 'index',index);
-				}
+	console.log('element',element, 'index',index);
+}
 console.log(array[array.length - 1 - index]);
+
+
+Задачи на сегодня:
+1. Уникальность символов
+2. Домашнее задание с часами.
+3. Доделать задание с кратностью чисел.
+4. Крестики нолики

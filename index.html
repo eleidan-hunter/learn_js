@@ -7,15 +7,40 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-
 	<div class="wrapper">
-		<!-- <script>
+		<script>
 			document.write(
 				`
 				<div class='clock'>
+					<div class='meridiem'>Ante Meridiem</div>
+
 					<div class='arrow arrowHours'><span></span></div>
 					<div class='arrow arrowMinutes'><span></span></div>
 					<div class='arrow arrowSeconds'><span></span></div>
+					<div class="timeMarkers timeMarker__1">
+						<div class="timeMarker timeMarkerTop"></div>
+						<div class="timeMarker timeMarkerBottom"></div>
+					</div>
+					<div class="timeMarkers timeMarker__2">
+						<div class="timeMarker timeMarkerTop"></div>
+						<div class="timeMarker timeMarkerBottom"></div>						
+					</div>
+					<div class="timeMarkers timeMarker__3">
+						<div class="timeMarker timeMarkerTop"></div>
+						<div class="timeMarker timeMarkerBottom"></div>						
+					</div>
+					<div class="timeMarkers timeMarker__4">
+						<div class="timeMarker timeMarkerTop"></div>
+						<div class="timeMarker timeMarkerBottom"></div>						
+					</div>
+					<div class="timeMarkers timeMarker__5">
+						<div class="timeMarker timeMarkerTop"></div>
+						<div class="timeMarker timeMarkerBottom"></div>						
+					</div>
+					<div class="timeMarkers timeMarker__6">
+						<div class="timeMarker timeMarkerTop"></div>
+						<div class="timeMarker timeMarkerBottom"></div>						
+					</div>
 				</div>
 				`
 			)
@@ -80,170 +105,12 @@
 
 			// 	`
 			// )
-		</script> -->
+		</script>
 		<!-- <div class="inner">
+			
+		</div> -->
 
-					
-
-					<script>
-							// ===============
-							// tic tac toe
-		
-							// let field = [
-							// 	[' ', ' ', ' '],
-							// 	[' ', ' ', ' '],
-							// 	[' ', ' ', ' ']
-							// ]
-							// let sb = 'x'
-							
-							// for( let m = 0; m < 9; m++){
-							// 	let html = '';
-
-							// 	let playerI = +prompt ('enter row number. Player: ' + sb)
-							// 	let playerJ = +prompt ('enter column number. Player: ' + sb)
-
-							// 	field[playerI][playerJ] = sb;
-
-							// 	if( sb === 'x'){
-							// 		sb = 'o';
-							// 	} else {
-							// 		sb = 'x';
-							// 	}
-
-							// 	for( let i = 0; i < field.length; i++){
-							// 		let row = '|'
-
-							// 		for( let j = 0; j < field[i].length; j++){
-							// 			row += field[i][j] + '|';
-							// 		}
-							// 		row += '\n+'
-
-							// 		for( let j = 0; j < field[i].length; j++){
-							// 			row += '-' + '+';
-							// 		}
-							// 		row += '\n'
-							// 		html += row
-							// 	}
-
-							// 	console.clear();
-							// 	console.log(html);
-							// }
-
-							// ===============
-
-							// random numbers
-							// === first ===
-
-							// function randomInt(num1 = 0, num2 = 0){
-									
-							// 	// verification min/max value
-							// 	if (num1 < num2){
-							// 		min = num1;
-							// 		max = num2;
-							// 	} else {
-							// 		min = num2;
-							// 		max = num1;
-							// 	}
-							// 	let random = Math.round(min + Math.random() * (max - min));
-
-							// 	return random;
-							// }
-
-							// let result = randomInt(-5, 5);
-							// console.log('result: ',result);
-
-							// === second ===
-
-							// function randomInt(num1 = 0, num2 = 0, f = null){
-									
-							// 	if( typeof f === 'number') {
-							// 		if (num1 < num2) {
-							// 			return +( a + (b - a) * Math.random()).toFixed(f);
-							// 		}
-							// 		return +( b + (a - b) * Math.random()).toFixed(f);
-							// 	}
-
-							// 	if (num1 < num2) {
-							// 		return Math.raund( a + (b - a) * Math.random);
-							// 	}
-							// 	return Math.raund( b + (a - b) * Math.random);
-
-							// }
-
-							// let result = randomInt(-5, 5);
-							// console.log('result: ',result);
-
-							// === homework ===
-
-							// function randomInt(min = 0, max = 0){
-
-							// 	let arr = []
-							// 	let obj = {}
-									
-							// 	let sum = 0
-							// 	let range = Math.round(min + Math.random() * (max - min))
-
-							// 	for (let i = 0; i < range; i ++){
-							// 		arr.push(Math.round(1 + Math.random() * (100 - 1)))
-							// 		sum += arr[i]
-							// 	}	
-									
-							// 	//===
-							// 	while(true) {
-							// 		let end = true;
-
-							// 		for( let i = 0; i <range; i++){
-							// 				let a = arr[i];
-							// 				let b = arr[i + 1];
-
-							// 				if (a > b){
-							// 						arr[i] = b;
-							// 						arr[i + 1] = a;
-																			
-							// 						end = false;
-							// 				}
-							// 		}
-
-							// 		if(end){
-							// 				break;
-							// 		}
-							// 	}
-							// 	//===
-
-							// 	for( let i = 0; i <range; i++){
-							// 		let a = arr[i];
-							// 		let b = arr[i + 1];
-							// 		let objQ = 1
-							// 		// console.log('arr[i] :', arr[i])
-							// 		// console.log('arr[i+1] :', arr[i+1])
-							// 		if (a != b) {
-							// 			obj[arr[i]] = objQ
-							// 			// obj[arr[i]] = objQ.push(arr[i])
-							// 		} else {
-							// 			obj[arr[i]] = objQ++
-							// 		}
-							// 		// console.log('objQ :', objQ)
-											
-							// 		// obj[arr[i]] += arr[i]
-							// 	}
-
-							// 	let average = sum / arr.length
-							// 	let result = {
-							// 		'arr' : arr,
-							// 		'sum: ' : sum,
-							// 		'average: ' : average,
-							// 		'obj: ' : obj
-							// 	}
-
-							// 	return result
-							// }
-
-							// let res = randomInt(1000, 5000);
-							// console.log('res: ', res)
-					</script>
-			</div> -->
-	
-		<script>
+		<!--<script>
 			// const a = ['bob', 'mark', 'jack', 'kel'];
 			let arr = [];
 			for (let i = 0; i < 100; i++){
@@ -289,8 +156,8 @@
 			// a.unshift
 
 
-		</script>
-		</div>
+		</script> -->
+	</div>
 	<script src="main.js"></script>
 </body>
 </html>

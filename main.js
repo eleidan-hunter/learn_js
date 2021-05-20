@@ -277,4 +277,136 @@
 		// <div class="line avg" style="bottom:${avg}%"> <p> <span>average value: ${avg} </span></p> </div>
 		// `)
 
+// ===============
+				// tic tac toe
 
+				// let field = [
+				// 	[' ', ' ', ' '],
+				// 	[' ', ' ', ' '],
+				// 	[' ', ' ', ' ']
+				// ]
+				// let sb = 'x'
+				
+				// for( let m = 0; m < 9; m++){
+				// 	let html = '';
+
+				// 	let playerI = +prompt ('enter row number. Player: ' + sb)
+				// 	let playerJ = +prompt ('enter column number. Player: ' + sb)
+
+				// 	field[playerI][playerJ] = sb;
+
+				// 	if( sb === 'x'){
+				// 		sb = 'o';
+				// 	} else {
+				// 		sb = 'x';
+				// 	}
+
+				// 	for( let i = 0; i < field.length; i++){
+				// 		let row = '|'
+
+				// 		for( let j = 0; j < field[i].length; j++){
+				// 			row += field[i][j] + '|';
+				// 		}
+				// 		row += '\n+'
+
+				// 		for( let j = 0; j < field[i].length; j++){
+				// 			row += '-' + '+';
+				// 		}
+				// 		row += '\n'
+				// 		html += row
+				// 	}
+
+				// 	console.clear();
+				// 	console.log(html);
+				// }
+
+				// ===============
+
+				// random numbers
+				// === first ===
+
+				// function randomInt(num1 = 0, num2 = 0){
+						
+				// 	// verification min/max value
+				// 	if (num1 < num2){
+				// 		min = num1;
+				// 		max = num2;
+				// 	} else {
+				// 		min = num2;
+				// 		max = num1;
+				// 	}
+				// 	let random = Math.round(min + Math.random() * (max - min));
+
+				// 	return random;
+				// }
+
+				// let result = randomInt(-5, 5);
+				// console.log('result: ',result);
+
+				// === second ===
+
+				// function randomInt(num1 = 0, num2 = 0, f = null){
+						
+				// 	if( typeof f === 'number') {
+				// 		if (num1 < num2) {
+				// 			return +( a + (b - a) * Math.random()).toFixed(f);
+				// 		}
+				// 		return +( b + (a - b) * Math.random()).toFixed(f);
+				// 	}
+
+				// 	if (num1 < num2) {
+				// 		return Math.raund( a + (b - a) * Math.random);
+				// 	}
+				// 	return Math.raund( b + (a - b) * Math.random);
+
+				// }
+
+				// let result = randomInt(-5, 5);
+				// console.log('result: ',result);
+
+				// === homework ===
+
+				// function randomInt(min = 0, max = 0){
+
+				// 	let arr = []
+				// 	let obj = {}
+						
+				// 	let sum = 0
+				// 	let range = Math.round(min + Math.random() * (max - min))
+
+				// 	for (let i = 0; i < range; i ++){
+				// 		arr.push(Math.round(1 + Math.random() * (5 - 1)))
+				// 		sum += arr[i]
+
+				// 		obj[arr[i]] = 1;
+
+				// 		// console.log('[arr[i]]',[arr[i]]);
+				// 		// console.log('[arr[i+1]]',[arr[i+1]]);
+				// 		// if(obj[arr[i]] === obj[arr[i]]){
+				// 		// 	obj[arr[i]] ++
+				// 		// }
+				// 	}	
+						
+				// 	for ( let j = 0; j < range; j ++){
+				// 		// console.log('[arr[j]]',[arr[j]]);
+				// 		// console.log('[arr[j+1]]',[arr[j+1]]);
+				// 		if(obj[arr[j]] === obj[arr[j+1]]){
+				// 			obj[arr[j]] = obj[arr[j]]+ 1
+				// 		} else {
+				// 			obj[arr[j]] = 1
+				// 		}
+				// 	}
+
+				// 	let average = sum / arr.length
+				// 	let result = {
+				// 		'arr' : arr,
+				// 		'sum: ' : sum,
+				// 		'average: ' : average,
+				// 		'obj: ' : obj
+				// 	}
+
+				// 	return result
+				// }
+
+				// let res = randomInt(10, 20);
+				// console.log('res: ', res)

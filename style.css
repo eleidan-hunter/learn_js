@@ -11,7 +11,7 @@ p{
 .wrapper{
 	display: flex;
 	height: 100vh;
-	
+	flex-direction: column;
 }
 
 .inner{
@@ -76,15 +76,17 @@ p{
 	width: 300px;
 	height: 300px;
 	margin: auto;
-	background: #e7e7e7;
+	background: #c8c8c8;
+	box-shadow: inset 20px 20px 40px #fafafa, 25px 25px 60px #969696;
 	border-radius: 50%;
 	position: relative;
 }
 .clock::after{
 	content: '';
-	width: 10px;
-	height: 10px;
-	background: #000;
+	width: 20px;
+	height: 20px;
+	background: #969696;
+	box-shadow: inset 2px 2px 4px #c8c8c8, 3px 3px 8px #646464;
 	position: absolute;
 	/* transform: translate(50%, 50%); */
 	top: 0;
@@ -94,12 +96,51 @@ p{
 	margin: auto;
 	border-radius: 50%;
 }
+.timeMarkers{
+	display: flex;
+	width: 7px;
+	height: 320px;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	position: absolute;
+}
+.timeMarker{
+	display: flex;
+	width: 100%;
+	height: 20px;
+	/* background: #939393; */
+	background: rgba(100, 100, 100, .3);
+
+}
+
+.timeMarkerTop{
+	align-self: flex-start;
+}
+.timeMarkerBottom{
+	align-self: flex-end;
+}
+.timeMarker__2{
+	transform: rotate(30deg);
+}
+.timeMarker__3{
+	transform: rotate(60deg);
+}
+.timeMarker__4{
+	transform: rotate(90deg);
+}
+.timeMarker__5{
+	transform: rotate(120deg);
+}
+.timeMarker__6{
+	transform: rotate(150deg);
+}
 
 .arrow{
 	display: flex;
 	align-items: flex-start;
-	/* width: 5px; */
-	/* background: #000; */
 	position: absolute;
 	top: 0;
 	bottom: 0;
@@ -109,28 +150,30 @@ p{
 }
 .arrowHours{
 	height: 200px;
-	width: 5px;
+	width: 6px;
 	animation: hourArrow 43200s linear infinite;
 }
 .arrowHours span{
 	display: flex;
-	background: blue;
+	background: rgba(100, 100, 100, 0.5);
+	box-shadow: 0 0 10px rgba(60, 60, 60, 0.5);
+	/* border: 3px solid #646464; */
 	width: 100%;
 	height: 50%;
 }
-
 .arrowMinutes{
 	height: 250px;
-	width: 3px;
+	width: 4px;
 	animation: hourMinutes 3600s linear infinite;
 }
 .arrowMinutes span{
 	display: flex;
-	background: green;
+	background: rgba(80, 80, 80, 0.5);
+	box-shadow: 0 0 10px rgba(60, 60, 60, 0.5);
+	/* border: 2px solid #505050; */
 	width: 100%;
 	height: 50%;
 }
-
 .arrowSeconds{
 	height: 290px;
 	width: 2px;
@@ -138,8 +181,33 @@ p{
 }
 .arrowSeconds span{
 	display: flex;
-	background: red;
+	background: rgba(60, 60, 60, 0.5);
+	box-shadow: 0 0 10px rgba(60, 60, 60, 0.5);
+	/* border: 1px solid #3c3c3c; */
 	width: 100%;
 	height: 50%;
+}
+
+.meridiem{
+	position: absolute;
+	right: 20%;
+	bottom: 20%;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-size: 0.8rem;
+	color: rgb(90,90,90);
+	text-shadow: 1px 1px 2px rgb(110,110,110);
+}
+
+.enterTime{
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	justify-content: space-between;
+	margin: auto;
+}
+
+.enterTime > *{
+	
+	padding: 1rem;
 }
 
