@@ -12,122 +12,105 @@
 			document.write(
 				`
 				<div class='clock'>
-					<div class='meridiem'>Ante Meridiem</div>
+					<input type="checkbox" id="time" >
+					<label for="time">
+						
+						<div class='meridiem'>Ante Meridiem</div>
 
-					<div class='arrow arrowHours'><span></span></div>
-					<div class='arrow arrowMinutes'><span></span></div>
-					<div class='arrow arrowSeconds'><span></span></div>
-					<div class="timeMarkers timeMarker__1">
-						<div class="timeMarker timeMarkerTop"></div>
-						<div class="timeMarker timeMarkerBottom"></div>
-					</div>
-					<div class="timeMarkers timeMarker__2">
-						<div class="timeMarker timeMarkerTop"></div>
-						<div class="timeMarker timeMarkerBottom"></div>						
-					</div>
-					<div class="timeMarkers timeMarker__3">
-						<div class="timeMarker timeMarkerTop"></div>
-						<div class="timeMarker timeMarkerBottom"></div>						
-					</div>
-					<div class="timeMarkers timeMarker__4">
-						<div class="timeMarker timeMarkerTop"></div>
-						<div class="timeMarker timeMarkerBottom"></div>						
-					</div>
-					<div class="timeMarkers timeMarker__5">
-						<div class="timeMarker timeMarkerTop"></div>
-						<div class="timeMarker timeMarkerBottom"></div>						
-					</div>
-					<div class="timeMarkers timeMarker__6">
-						<div class="timeMarker timeMarkerTop"></div>
-						<div class="timeMarker timeMarkerBottom"></div>						
-					</div>
+						<div class='arrow arrowHours'><span></span></div>
+						<div class='arrow arrowMinutes'><span></span></div>
+						<div class='arrow arrowSeconds'><span></span></div>
+						<div class="timeMarkers timeMarker__1">
+							<div class="timeMarker timeMarkerTop"></div>
+							<div class="timeMarker timeMarkerBottom"></div>
+						</div>
+						<div class="timeMarkers timeMarker__2">
+							<div class="timeMarker timeMarkerTop"></div>
+							<div class="timeMarker timeMarkerBottom"></div>						
+						</div>
+						<div class="timeMarkers timeMarker__3">
+							<div class="timeMarker timeMarkerTop"></div>
+							<div class="timeMarker timeMarkerBottom"></div>						
+						</div>
+						<div class="timeMarkers timeMarker__4">
+							<div class="timeMarker timeMarkerTop"></div>
+							<div class="timeMarker timeMarkerBottom"></div>						
+						</div>
+						<div class="timeMarkers timeMarker__5">
+							<div class="timeMarker timeMarkerTop"></div>
+							<div class="timeMarker timeMarkerBottom"></div>						
+						</div>
+						<div class="timeMarkers timeMarker__6">
+							<div class="timeMarker timeMarkerTop"></div>
+							<div class="timeMarker timeMarkerBottom"></div>						
+						</div>
+					</label>
+					
 				</div>
 				`
 			)
-
-			function animArrow(name, from, to){
-					return`
-					<style>
-						@keyframes ${name}{
-							from{
-								transform: rotate(${from}deg);
-							}
-							to {
-								transform: rotate(${to}deg);
-							}
-						}
-
-					</style>
-					`;
-			}
-
 			const dataTime = new Date();
+
 			let h = dataTime.getHours();
 			let m = dataTime.getMinutes();
 			let s = dataTime.getSeconds();
 
 			h = h > 12? h - 12: h;
 
-			document.write(animArrow('hourSeconds', 6 * s, 360 + 6 * s));
-			document.write(animArrow('hourMinutes', 6 * m, 360 + 6 * m + .1));
-			document.write(animArrow('hourArrow', 30 * h + m * .5, 360 + 30 * h + m * .5));
+			// let h = +prompt('enter hours');
+			// let m = +prompt('enter minutes');
+			// let s = +prompt('enter seconds');
+			
+			// console.log('hours', h);
+			// if ()
 
+			function animArrow(name, from, to){
+				return`
+				<style>
+					@keyframes ${name}{
+						from{
+							transform: rotate(${from}deg);
+						}
+						to {
+							transform: rotate(${to}deg);
+						}
+					}
 
-			// document.write(
-					
-			// 	`
-			// 	<style>
-			// 	@keyframes hourArrow{
-			// 		from{
-			// 			transform: rotate(${30 * h + m *.5}deg)
-			// 		}
-			// 		to {
-			// 			transform: rotate(${360+ 30 * h + m *.5}deg)
-			// 		}
-			// 	}
-			// 	@keyframes hourMinutes{
-			// 		from{
-			// 			transform: rotate(${6 * m}deg)
-			// 		}
-			// 		to {
-			// 			transform: rotate(${360 + 6 * m + .1}deg)
-			// 		}
-			// 	}
-			// 	@keyframes hourSeconds{
-			// 		from{
-			// 			transform: rotate(${6 * s}deg)
-			// 		}
-			// 		to {
-			// 			transform: rotate(${360 + 6 * s}deg)
-			// 		}
-			// 	}
-			// 	</style>
+				</style>
+				`;
+			}
 
-			// 	`
-			// )
+			let hours = document.write(animArrow('hourSeconds', 6 * s, 360 + 6 * s));
+			let minutes = document.write(animArrow('hourMinutes', 6 * m, 360 + 6 * m + .1));
+			let seconds = document.write(animArrow('hourArrow', 30 * h + m * .5, 360 + 30 * h + m * .5));
+			
 		</script>
 		<!-- <div class="inner">
 			
 		</div> -->
 
-		<!--<script>
-			// const a = ['bob', 'mark', 'jack', 'kel'];
-			let arr = [];
-			for (let i = 0; i < 100; i++){
-				arr.push(Math.floor(Math.random() * 100));
-			}
-			//way 1
-			//a.forEach(() => {})
-			//way 2
-			//a.forEach(function(){})
-			//way 3
-			//function f1(){}
-			//a.forEach(f1)
+		<script>
 
-			arr.forEach((element, index, array) => {
-				if (element % 3 === 0 && index % 3 === 0){
-					console.log('element',element, 'index',index);
-				}
+			// let num1 = prompt('enter yuor first number');
+			// let num2 = prompt('enter yuor second number');
+			// let num3 = prompt('enter yuor third number');
+			// // const a = ['bob', 'mark', 'jack', 'kel'];
+			// let arr = [];
+			// for (let i = 0; i < 100; i++){
+			// 	arr.push(Math.floor(Math.random() * 100));
+			// }
+			// //way 1
+			// //a.forEach(() => {})
+			// //way 2
+			// //a.forEach(function(){})
+			// //way 3
+			// //function f1(){}
+			// //a.forEach(f1)
+
+			// arr.forEach((element, index, array) => {
+			// 	if (element % num1 === 0 && element % num2 === 0 && element % num3 === 0){
+			// 		console.log('element',element, 'index',index);
+			// 	}
 
 
 				
@@ -137,7 +120,7 @@
 				// };
 
 				// // console.log(dataTime);
-			});
+			//});
 
 			// a.map
 			// a.reduce
@@ -156,7 +139,7 @@
 			// a.unshift
 
 
-		</script> -->
+		</script>
 	</div>
 	<script src="main.js"></script>
 </body>

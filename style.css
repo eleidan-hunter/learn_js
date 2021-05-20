@@ -95,6 +95,7 @@ p{
 	right: 0;
 	margin: auto;
 	border-radius: 50%;
+	z-index: 2;
 }
 .timeMarkers{
 	display: flex;
@@ -147,6 +148,7 @@ p{
 	left: 0;
 	right: 0;
 	margin: auto;
+	z-index: 1;
 }
 .arrowHours{
 	height: 200px;
@@ -211,3 +213,15 @@ p{
 	padding: 1rem;
 }
 
+.checkbox{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	
+}
+
+#time:checked+label[for=time] .arrowHours,
+#time:checked+label[for=time] .arrowMinutes,
+#time:checked+label[for=time] .arrowSeconds{
+	animation-play-state: paused;
+}
