@@ -410,3 +410,80 @@
 
 				// let res = randomInt(10, 20);
 				// console.log('res: ', res)
+
+// CLOCK
+// =========================
+// document.write(
+// 	`
+// 	<div class='clock'>
+// 		<input type="checkbox" id="time" >
+// 		<label for="time">
+			
+// 			<!-- <div class='meridiem'>Ante Meridiem</div> -->
+
+// 			<div class='arrow arrowHours'><span></span></div>
+// 			<div class='arrow arrowMinutes'><span></span></div>
+// 			<div class='arrow arrowSeconds'><span></span></div>
+// 			<div class="timeMarkers timeMarker__1">
+// 				<div class="timeMarker timeMarkerTop"></div>
+// 				<div class="timeMarker timeMarkerBottom"></div>
+// 			</div>
+// 			<div class="timeMarkers timeMarker__2">
+// 				<div class="timeMarker timeMarkerTop"></div>
+// 				<div class="timeMarker timeMarkerBottom"></div>						
+// 			</div>
+// 			<div class="timeMarkers timeMarker__3">
+// 				<div class="timeMarker timeMarkerTop"></div>
+// 				<div class="timeMarker timeMarkerBottom"></div>						
+// 			</div>
+// 			<div class="timeMarkers timeMarker__4">
+// 				<div class="timeMarker timeMarkerTop"></div>
+// 				<div class="timeMarker timeMarkerBottom"></div>						
+// 			</div>
+// 			<div class="timeMarkers timeMarker__5">
+// 				<div class="timeMarker timeMarkerTop"></div>
+// 				<div class="timeMarker timeMarkerBottom"></div>						
+// 			</div>
+// 			<div class="timeMarkers timeMarker__6">
+// 				<div class="timeMarker timeMarkerTop"></div>
+// 				<div class="timeMarker timeMarkerBottom"></div>						
+// 			</div>
+// 		</label>
+		
+// 	</div>
+// 	`
+// )
+// const dataTime = new Date();
+
+// let h = dataTime.getHours();
+// let m = dataTime.getMinutes();
+// let s = dataTime.getSeconds();
+
+
+
+// // let h = +prompt('enter hours');
+// // let m = +prompt('enter minutes');
+// // let s = +prompt('enter seconds');
+// h = h > 12? h - 12: h;
+// // console.log('hours', h);
+// // if ()
+
+// function animArrow(name, from, to){
+// 	return`
+// 	<style>
+// 		@keyframes ${name}{
+// 			from{
+// 				transform: rotate(${from}deg);
+// 			}
+// 			to {
+// 				transform: rotate(${to}deg);
+// 			}
+// 		}
+
+// 	</style>
+// 	`;
+// }
+
+// let hours = document.write(animArrow('hourSeconds', 6 * s, 360 + 6 * s));
+// let minutes = document.write(animArrow('hourMinutes', 6 * m, 360 + 6 * m + .1));
+// let seconds = document.write(animArrow('hourArrow', 30 * h + m * .5, 360 + 30 * h + m * .5));

@@ -9,80 +9,6 @@
 <body>
 	<div class="wrapper">
 		<script>
-			document.write(
-				`
-				<div class='clock'>
-					<input type="checkbox" id="time" >
-					<label for="time">
-						
-						<!-- <div class='meridiem'>Ante Meridiem</div> -->
-
-						<div class='arrow arrowHours'><span></span></div>
-						<div class='arrow arrowMinutes'><span></span></div>
-						<div class='arrow arrowSeconds'><span></span></div>
-						<div class="timeMarkers timeMarker__1">
-							<div class="timeMarker timeMarkerTop"></div>
-							<div class="timeMarker timeMarkerBottom"></div>
-						</div>
-						<div class="timeMarkers timeMarker__2">
-							<div class="timeMarker timeMarkerTop"></div>
-							<div class="timeMarker timeMarkerBottom"></div>						
-						</div>
-						<div class="timeMarkers timeMarker__3">
-							<div class="timeMarker timeMarkerTop"></div>
-							<div class="timeMarker timeMarkerBottom"></div>						
-						</div>
-						<div class="timeMarkers timeMarker__4">
-							<div class="timeMarker timeMarkerTop"></div>
-							<div class="timeMarker timeMarkerBottom"></div>						
-						</div>
-						<div class="timeMarkers timeMarker__5">
-							<div class="timeMarker timeMarkerTop"></div>
-							<div class="timeMarker timeMarkerBottom"></div>						
-						</div>
-						<div class="timeMarkers timeMarker__6">
-							<div class="timeMarker timeMarkerTop"></div>
-							<div class="timeMarker timeMarkerBottom"></div>						
-						</div>
-					</label>
-					
-				</div>
-				`
-			)
-			const dataTime = new Date();
-
-			let h = dataTime.getHours();
-			let m = dataTime.getMinutes();
-			let s = dataTime.getSeconds();
-
-			h = h > 12? h - 12: h;
-
-			// let h = +prompt('enter hours');
-			// let m = +prompt('enter minutes');
-			// let s = +prompt('enter seconds');
-			
-			// console.log('hours', h);
-			// if ()
-
-			function animArrow(name, from, to){
-				return`
-				<style>
-					@keyframes ${name}{
-						from{
-							transform: rotate(${from}deg);
-						}
-						to {
-							transform: rotate(${to}deg);
-						}
-					}
-
-				</style>
-				`;
-			}
-
-			let hours = document.write(animArrow('hourSeconds', 6 * s, 360 + 6 * s));
-			let minutes = document.write(animArrow('hourMinutes', 6 * m, 360 + 6 * m + .1));
-			let seconds = document.write(animArrow('hourArrow', 30 * h + m * .5, 360 + 30 * h + m * .5));
 			
 		</script>
 		<!-- <div class="inner">
@@ -91,10 +17,12 @@
 
 		<script>
 
+			// === a.forEach ===
+			//
 			// let num1 = prompt('enter yuor first number');
 			// let num2 = prompt('enter yuor second number');
 			// let num3 = prompt('enter yuor third number');
-			// // const a = ['bob', 'mark', 'jack', 'kel'];
+			// const a = ['bob', 'mark', 'jack', 'kel'];
 			// let arr = [];
 			// for (let i = 0; i < 100; i++){
 			// 	arr.push(Math.floor(Math.random() * 100));
@@ -122,9 +50,16 @@
 				// // console.log(dataTime);
 			//});
 
-			// a.map
+			// === a.map ===
+			//
+
+
 			// a.reduce
-			// a.filter
+			// === a.filter ===
+
+			// console.log(a.filter(e => {
+			// 	return e.length > 3;
+			// }))
 			// a.forEach
 
 			// a.some
@@ -138,7 +73,66 @@
 			// a.shift
 			// a.unshift
 
+		//custom a.forEach
+		// const a = ['bob', 'mark', 'jack', 'kel'];
+		// function customForEach(arr, cb){
+		// 	for( let i=0; i<arr.length; i++){
+		// 		cb(arr[i], i, arr)
+		// 	}
+		// }
+		// customForEach(a, (...args) => console.log(...args));
+		
+		//custom a.map
+		// function customMap(arr, cb){
+		// 	let newArr = [];
+		// 	for( let i=0; i<arr.length; i++){
+		// 		cb(arr[i], i, arr)
+		// 	}
+		// 	for( let j=0; j<arr.length; j++){
+		// 		newArr.push(cb(arr[j], j, arr));
+		// 	}
+		// 	console.log(newArr);
+		// }
+		// customMap(a, (element, index, array) => console.log(element + 1));
 
+		// let newMap = a.map(e => {
+		// 	return e + 1;
+		// })
+		// console.log(newMap);
+		
+		// a.forEach((element, index, array) =>{
+		// 	console.log(array[array.length - 1 - index]);
+		// })
+
+		// ======
+		let arr = []
+		let min = -100
+		let max = 100
+
+		for (let i = 0; i < 100; i ++){
+			arr.push(Math.round(min + Math.random() * (max - min)));
+			
+		}	
+
+		console.log('arr1: ',arr);
+
+		// let newArr = arr.map((element, index, array) => element > 0 ? '-∞' : element);
+
+		// let newArr = arr.map(function exponentiation(element, index, array) {
+		// 	let newElement = '';
+			
+		// 	if (element < 0){
+		// 		newElement = -Math.pow(element, 2);
+		// 	} else {
+		// 		newElement = Math.pow(element, 2);
+		// 	}
+
+		// 	return newElement;
+		// }) ;
+
+		let newArr = arr.reduce
+		//сумма всех элементов через reduce
+		console.log('newArr: ',newArr)
 		</script>
 	</div>
 	<script src="main.js"></script>
