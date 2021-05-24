@@ -47,18 +47,41 @@
 
 			// === a.filter ===
 			// из массива от -100 до 100 вывести все числа в диапазоне от -10 до 10
-			newArr = arr.filter(function(num){
-				return num <= 10;
-			})
+			// newArr = arr.filter(function(num){
+			// 	return num <= 10;
+			// })
 			// что-то пошло не так
 
 			// === a.map ===
-			
+			// вывести элементы массива в формате "number № {index} : {element} ;"
+			// newArr = arr.map((element, index, array) => {
+			// 	newElement = 'number №' + index + ':' + element;
+
+			// 	// console.log('newArr:',newArr);
+
+			// 	return newElement;
+			// })
 
 			// === a.some ===
-			// === a.every ===
-			// === a.reduce ===
+			// Проверить есть ли в массиве число пользователя
+			// let userNumber = prompt('enter your number');
 
+			// newArr = arr.some((element, array, userNumber)=> {
+				
+			// return userNumber === element
+			// }) 
+
+
+			// === a.every ===
+			// Не смог придумать инетерсное задание, но принцип понял
+			// newArr = arr.every((element, array, userNumber)=> {
+			// 	return userNumber < element;
+			// }) 
+	
+			// === a.reduce ===
+			newArr = arr.reduce(function(sum, element, array )  {
+				return sum + element;
+			}, 0)
 			
 			
 			// === a.find ===
@@ -91,7 +114,6 @@
 			// //way 3
 			// //function f1(){}
 			// //a.forEach(f1)
-
 			// arr.forEach((element, index, array) => {
 				// if (element % num1 === 0 && element % num2 === 0 && element % num3 === 0){
 				// 	console.log('element',element, 'index',index);
@@ -139,10 +161,6 @@
 			// })
 			// console.log(newMap);
 			
-			// a.forEach((element, index, array) =>{
-			// 	console.log(array[array.length - 1 - index]);
-			// })
-
 			// ======
 			// let arr = []
 			// let min = -100
@@ -150,7 +168,6 @@
 
 			// for (let i = 0; i < 100; i ++){
 			// 	arr.push(Math.round(min + Math.random() * (max - min)));
-				
 			// }	
 
 			// console.log('arr1: ',arr);
