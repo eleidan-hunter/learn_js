@@ -225,3 +225,14 @@ p{
 #time:checked+label[for=time] .arrowSeconds{
 	animation-play-state: paused;
 }
+
+/* DOM */
+
+.box{
+	display: flex;
+	width: 5vw;
+	height: 5vh;
+	background: #000;
+	position: absolute;
+	
+}
