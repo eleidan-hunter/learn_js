@@ -28,6 +28,9 @@ function showDeals(array, domElement){
     // console.log('dom',domElement )
     // domElement.innerHTML = array;
     for (i = 0; i < array.length; i++){
-        domElement.innerHTML = array;
+        a = `<div><input type="checkbox"> ${array[i]} <button>Delete deal</button><div>`;
+        domElement.innerHTML = a
+        // sum += domElement.innerHTML;
     }
+    
 }
