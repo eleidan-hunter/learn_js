@@ -1,7 +1,9 @@
 body{
-	margin: 0;
-	padding: 0;
-	outline: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 15vh;
+	flex-direction: column;
 }
 p{
 	padding: 0;
