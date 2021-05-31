@@ -6,49 +6,38 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Document</title>
 		<link rel="stylesheet" href="style.css">
+		<script src="helper.js"></script>
+		<script src="dom-js.js" defer></script>
 	</head>
 	<body>
-		
-		<script src="helper.js"></script>
 		<style>
 			*{
 				padding: 0;
 				margin: 0;
 			}
-
 			body{
 				height: 100vh;
 				position: relative;
 			}
-
-			
 		</style>
-			
 		<!-- <script>
-			
 			let sum = 0;
 			for (i = 0; i < 20; i++){
 				document.body.innerHTML += `<div class="box" style="top:${i*5}vh;left:${i*5}vw"></div>`;
 				sum += document.body.innerHTML;
 			}
-
 		</script> -->
 
-		<script src="dom-js.js" defer></script>
-
 		<!-- <h3 class="listTitle">To do list (<span>0</span>)</h3> -->
-
-		<h3 class="listTitle">To do list (0)</h3>
-
+		<h3 class="listTitle">To do list ()</h3>
 
 		<form action="">
-			<input type="text">
 
+			<input type="text">
 			<button id="myButton">Add new deal</button>
+
 		</form>
-		<button>Sort</button>
-		<!-- click = A-Z, d-click = Z-A -->
+		<button class="sort_btn">Sort (no sort)</button>
 		<div class="wrapper" id=""></div>
-		
 	</body>
 </html>
