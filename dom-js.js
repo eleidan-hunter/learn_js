@@ -7,27 +7,76 @@ let SortBtn = document.querySelector('.sort_btn');
 let deals = [];
 let count = deals.length;
 
+
+const temp = localStorage.getItem('deals');
+if(temp){
+	deals = JSON.parse(temp);
+	showDeals(deals, listDeals);
+};
+console.log('temp', temp);
+
+
 let SORT_TYPE = 'any'; // a-z, z-a
 
 // console.log(r4);
 myButton.addEventListener('click', addNewDeal);
 listDeals.addEventListener('click', removeDeals);
+listDeals.addEventListener('click', setStatusDeal);
 SortBtn.addEventListener('click', sortList);
+
+function setStatusDeal(event){
+	event.preventDefault();
+
+	let element = event.target;
+	if (element.nodeName === 'INPUT' && element.type === 'checkbox'){
+		console.log(element.checked);
+		const id = element.parentElement.getAttribute('data-id');
+
+		deals.find(function (dealName){
+			if (dealName.id === id){
+				dealName.isDone = element.checked;
+				return true;
+			}
+			return false;
+		});
+
+		showDeals(deals, listDeals);
+	}
+
+	if(element.checked){
+		element.setAttribute('checked', 'checked');
+	} else{
+		element.removeAttribute('checked');
+	}
+	
+}
 
 function removeDeals(event){
 	event.preventDefault();
 
 	let element = event.target;
 	// // console.log('has',elem.hasAttribute('data-index'));
-	if(element.hasAttribute('data-id')){
-		const id = element.getAttribute('data-id');
-		const index = deals.findIndex(function(dealName){
-			return dealName.id === id;
-		});
-		deals.splice(index, 1);
+	// if(element.hasAttribute('data-id')){
+	// 	const id = element.getAttribute('data-id');
+	// 	const index = deals.findIndex(function(dealName){
+	// 		return dealName.id === id;
+	// 	});
+	// 	deals.splice(index, 1);
 
-		showDeals(deals, listDeals);
+	// 	showDeals(deals, listDeals);
+	// }
+	if (element.nodeName === 'BUTTON'){
+		if(element.parentElement.hasAttribute('data-id')){
+			const id = element.parentElement.getAttribute('data-id');
+			const index = deals.findIndex(function(dealName){
+				return dealName.id === id;
+			});
+			deals.splice(index, 1);
+	
+			showDeals(deals, listDeals);
+		}
 	}
+	
 }
 
 function sortList(event){
@@ -89,7 +138,6 @@ function addNewDeal(e){
 		// === second
 		deals.push({id: r4(), value: input.value});
 		input.value = '';
-		// deals.push({});
 	}
 	title.innerHTML = `To do list (${deals.length})`;
 	showDeals(deals, listDeals);
@@ -97,16 +145,17 @@ function addNewDeal(e){
 
 function showDeals(array, domElement){
 
+	localStorage.setItem('deals',JSON.stringify(array));
 	
 	domElement.innerHTML = array.reduce(
 		function(html, dealName, index){
 			return (
 				html +
-				`<div>
-				<input type="checkbox"> 
+				`<div data-id='${dealName.id}'>
+				<input type="checkbox" ${dealName.isDone ? 'checked' : ''}> 
 				<span>${dealName.value}</span>
-				<button data-id='${dealName.id}'>Delete deal</button>
-				<div>`
+				<button >Delete deal</button>
+				</div>`
 			);
 		}, '');
 }
