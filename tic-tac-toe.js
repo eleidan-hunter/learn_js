@@ -1,41 +1,41 @@
 // tic tac toe
 
-let Fild = document.querySelector('.fild');
-let sb = '0'; //1
-let Player = document.querySelector('.player_index');
+// let Fild = document.querySelector('.fild');
+// let sb = '0'; //1
+// let Player = document.querySelector('.player_index');
 
-for(let i = 0; i < 9; i++){
-    Fild.innerHTML += (
-        `<div class="cell" data-index='${i}'></div>`
-    )
+// for(let i = 0; i < 9; i++){
+//     Fild.innerHTML += (
+//         `<div class="cell" data-index='${i}'></div>`
+//     )
     
-}
+// }
 
 
 
 
-let Cells = document.querySelectorAll('.cell');
-Cells.forEach(function(element){
-    // console.log(element);
-    element.addEventListener('click', function(event){
-        const Click = event.target;
-        console.log('click', Click.innerHTML);
-        // console.log('target', event.target);
+// let Cells = document.querySelectorAll('.cell');
+// Cells.forEach(function(element){
+//     // console.log(element);
+//     element.addEventListener('click', function(event){
+//         const Click = event.target;
+//         console.log('click', Click.innerHTML);
+//         // console.log('target', event.target);
 
-        if (Click.innerHTML === ''){
-            if( sb === '0'){
-                Player.innerHTML = 'Игрок 1';
-                sb = '1';
-                Click.classList.add('zero');
-            } else if (sb === '1' ){
-                sb = '0';
-                Player.innerHTML = 'Игрок 2';
-                Click.classList.add('cross');
-            }
-            // Click.innerText = `${sb}`;
-        }
-    })
-})
+//         if (Click.innerHTML === ''){
+//             if( sb === '0'){
+//                 Player.innerHTML = 'Игрок 1';
+//                 sb = '1';
+//                 Click.classList.add('zero');
+//             } else if (sb === '1' ){
+//                 sb = '0';
+//                 Player.innerHTML = 'Игрок 2';
+//                 Click.classList.add('cross');
+//             }
+//             // Click.innerText = `${sb}`;
+//         }
+//     })
+// })
 
 
     // Cell.addEventListener('click', function(){console.log('click')});
