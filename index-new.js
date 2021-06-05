@@ -1,91 +1,42 @@
-let gallery = document.body;
-let BtnDefault = document.querySelector('.btn_20');
-let Btn100 = document.querySelector('.btn_100');
-let Btn200 = document.querySelector('.btn_200');
+// const Searchhtml = document.querySelector('.search');
+const Searchhtml = search;
+const Paginationhtml = pagination;
 
+let page = 1;
 
+Paginationhtml['prev'].addEventListener('click', () => {
+	showImg(-1);
+})
 
-// gallery.createElement('img');
+Paginationhtml['next'].addEventListener('click', () => {
+	showImg(1);
+})
 
-// BtnDefault.addEventListener('click', (e) => {
-// 	document.querySelectorAll('img').forEach((e) => e.remove());
-// 	fetch(
-// 		'https://pixabay.com/api/?key=21923475-24100d30c0dcfaa14db447820&q=yellow+flowers&image_type=photo',
-// 		{
-// 			method: 'get',
-// 			headers: {},
-			
-// 		}
-// 	).then(( result ) => {
-// 		return result.json(); //text(), blob()
-// 	}).then((data) => {
-// 		data.hits.forEach(element => {
-// 			// console.log(element);
-// 			// first
-// 			// BtnDefault.insertAdjacentHTML('afterend', (`<img src="${element.previewURL}">`));
-
-// 			// second
-// 			let src = element.previewURL;
-// 			let Img = document.createElement('img');
-// 			Img.setAttribute( 'src', src);
-// 			document.body.appendChild(Img);
-// 			// console.log(Img);
-// 		});
-// 	});
-// });
-
-Btn100.addEventListener('click', (e) => {
-	document.querySelectorAll('img').forEach((e) => e.remove());
-	fetch(
-		'https://pixabay.com/api/?key=21923475-24100d30c0dcfaa14db447820',
-		{
-			// key: '21923475-24100d30c0dcfaa14db447820',
-			method: 'get',
-			headers: {},
-			per_page: 100,
-		}
-	).then(( result ) => {
-		return result.json(); //text(), blob()
-	}).then((data) => {
-		console.log(data);
-		data.hits.forEach(element => {
-			// console.log(element);
-			// first
-			// Btn100.insertAdjacentHTML('afterend', (`<img src="${element.previewURL}">`));
-
-			// second
-			let src = element.previewURL;
-			let Img = document.createElement('img');
-			Img.setAttribute( 'src', src);
-			document.body.appendChild(Img);
-			// console.log(Img);
-		});
-	});
+Searchhtml.addEventListener('submit', (e) => {
+	e.preventDefault();
+	showImg(0);
 });
 
-// Btn200.addEventListener('click', (e) => {
-// 	document.querySelectorAll('img').forEach((e) => e.remove());
-// 	fetch(
-// 		'https://pixabay.com/api/?key=21923475-24100d30c0dcfaa14db447820&q=yellow+flowers&image_type=photo',
-// 		{
-// 			method: 'get',
-// 			headers: {},
-// 			per_page: 200,
-// 		}
-// 	).then(( result ) => {
-// 		return result.json(); //text(), blob()
-// 	}).then((data) => {
-// 		data.hits.forEach(element => {
-// 			// console.log(element);
-// 			// first
-// 			// Btn200.insertAdjacentHTML('afterend', (`<img src="${element.previewURL}">`));
+Paginationhtml.addEventListener('submit', (e) => {
+	e.preventDefault();
+});
 
-// 			// second
-// 			let src = element.previewURL;
-// 			let Img = document.createElement('img');
-// 			Img.setAttribute( 'src', src);
-// 			document.body.appendChild(Img);
-// 			// console.log(Img);
-// 		});
-// 	});
-// });
+function showImg(_page){
+
+	//first
+	if(_page < 0 ){
+		page++;
+	} else if (_page > 0 ) {
+		page--;
+	} else {
+		page = 1;
+	}
+
+	//second
+	
+	const keyWord = Searchhtml['key_word'].value.replace(/\s+/g, '+');
+	const perPage = Paginationhtml['per_page'].value;
+	searchImg (keyWord, perPage, page, (data) => {
+	});
+}
+

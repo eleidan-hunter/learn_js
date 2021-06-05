@@ -1,17 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <link rel="stylesheet" href="style-new.css">
-    </head>
-    <body>
-        <script src="index-new.js" defer></script>
-        <button class="btn_20">Get It</button>
-        <button class="btn_100">Get It (100)</button>
-        <button class="btn_200">Get It (200)</button>
-    
-    </body>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+		<link rel="stylesheet" href="style-new.css">
+	</head>
+	<body>
+		<script src="api.js"></script>
+		<script src="index-new.js" defer></script>
+		<!-- <button class="btn_20">Get It</button>
+		<button class="btn_100">Get It (100)</button>
+		<button class="btn_200">Get It (200)</button> -->
+		
+		<section class="block_center search">
+			<form action="" id="search">
+				<input type="text" name="key_word" id="" placeholder="enter key word">
+							
+				<!-- <button type="submit">Get img!</button> -->
+			</form>
+
+			<div class="wrapper"></div>
+
+			
+		</section>
+
+		<section class="content"></section>
+
+		<section class="block_center pagination">
+			<form action="" id="pagination">
+			
+				<button name="prev">prev</button>
+				<button name="next">next</button>
+
+				<select name="per_page" id="">
+					<option value="20">20</option>
+					<option value="100">100</option>
+					<option value="200">200</option>
+				</select>
+
+				<input type="number" name="number_page" id="" placeholder="1">
+			</form>
+		</section>
+	</body>
 </html>
