@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <script src="./helpers.js" defer></script>
+  <script src="./api.js" defer></script>
+  <script src="./index.js" defer></script>
+  
+
+  <section class="search flex">
+    <form id="search">
+      <input type="text" placeholder="Enter key word" name="key_word">
+      <span class="total"></span>
+    </form>
+  </section>
+
+  <section class="content"></section>
+
+  <section class="pagination flex">    
+    <form id="pagination">
+      <button name="prev" disabled>preview page</button>
+      <button name="next" disabled>next page</button>
+      <select name="per_page">
+        <option value="20">20</option>
+        <option value="100">100</option>
+        <option value="200">200</option>
+      </select>
+    </form>
+  </section>
+</body>
+</html>

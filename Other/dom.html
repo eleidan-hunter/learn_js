@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+		<link rel="stylesheet" href="style.css">
+		<script src="helper.js"></script>
+		<script src="index.js"></script>
+		<script src="dom-js.js" defer></script>
+	</head>
+	<body>
+		<style>
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			body{
+				height: 100vh;
+				position: relative;
+			}
+		</style>
+		<!-- <script>
+			let sum = 0;
+			for (i = 0; i < 20; i++){
+				document.body.innerHTML += `<div class="box" style="top:${i*5}vh;left:${i*5}vw"></div>`;
+				sum += document.body.innerHTML;
+			}
+		</script> -->
+
+		<!-- <h3 class="listTitle">To do list (<span>0</span>)</h3> -->
+		<h3 class="listTitle">To do list ()</h3>
+
+		<form action="">
+
+			<input type="text">
+			<button id="myButton">Add new deal</button>
+
+		</form>
+		<button class="sort_btn">Sort (no sort)</button>
+		<div class="wrapper" id=""></div>
+	</body>
+</html>
