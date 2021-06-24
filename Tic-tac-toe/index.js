@@ -1,81 +1,95 @@
-let Fild = document.querySelector('.fild');
-let sb = '0'; //1
-let Player = document.querySelector('.player_index');
-let Cells;
+let field = document.querySelector('.fild');
+let player = document.querySelector('.player_index');
 
-let arrGame = [];
-let arrWin = [[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6]];
-for(let i = 0; i < 9; i++){
-	Fild.innerHTML += (
-		`<div class="cell" data-index='${i}'></div>`
-	)
-	Cells = document.querySelectorAll('.cell'); 
+let marker = '0';
+let cell;
+let cells;
+
+let gameField = ['','','','','','','','','',];
+let winField = [[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6]];
+
+
+
+//create cells
+for( let i = 0; i < gameField.length; i++){
+	cell = document.createElement('div');
+	cell.classList.add('cell');
+	cell.setAttribute('data-cell', 'empty')
+	field.appendChild(cell);
+	cells = document.querySelectorAll('.cell');
 }
 
- 
-Cells.forEach(function(element){
-    // console.log(element);
-    element.addEventListener('click', function(event){
-        const Click = event.target;
-
-        if (Click.innerHTML === ''){
-            if( sb === '0'){
-                Player.innerHTML = 'Ходят крестики';
-                sb = '1';
-                Click.classList.add('zero');
-								arrGame[Click.getAttribute('data-index')] = 'x';
-            } else if (sb === '1' ){
-                sb = '0';
-                Player.innerHTML = 'Ходят нолики';
-                Click.classList.add('cross');
-								arrGame[Click.getAttribute('data-index')] = 'o';
-            }
-						console.log(arrGame);
-        }
-    })
+//change players
+cells.forEach(function(element){
+	element.addEventListener('click', function(event){
+		event.preventDefault();
+		const click = event.target;
+		if(click.innerHTML === ''){
+			if(marker === '0'){
+				click.classList.add('zero');
+				click.innerText = 'o';
+				player.innerText = 'set cross';
+				gameField[click.getAttribute('data-cell')] = 'o';
+				marker = '1';
+			} else if (marker === '1'){
+				click.classList.add('cross');
+				click.innerText = 'x';
+				player.innerText = 'set zero';
+				gameField[click.getAttribute('data-cell')] = 'x';
+				marker = '0';
+			}
+		}
 		
+	})
 })
 
+//check winner
+for(let i = 0; i < winField.length; i++){
+	if(gameField[winField[i][0]] === gameField[winField[i][1]] &&
+		gameField[winField[i][1]] === gameField[winField[i][2]]){
+			console.log('1');
+		}
+			
+}
 
-    
 
 
-// let field = [
-// 	[' ', ' ', ' '],
-// 	[' ', ' ', ' '],
-// 	[' ', ' ', ' ']
-// ]
-// // let sb = 'x'
+// let Fild = document.querySelector('.fild');
+// let sb = '0'; //1
+// let Player = document.querySelector('.player_index');
+// let Cells;
 
-// for( let m = 0; m < 9; m++){
-// 	let html = '';
-
-// 	// let playerI = +prompt ('enter row number. Player: ' + sb)
-// 	// let playerJ = +prompt ('enter column number. Player: ' + sb)
-
-// 	field[playerI][playerJ] = sb;
-
-// 	if( sb === 'x'){
-// 		sb = 'o';
-// 	} else {
-// 		sb = 'x';
-// 	}
-
-// 	for( let i = 0; i < field.length; i++){
-// 		let row = '|'
-
-// 		for( let j = 0; j < field[i].length; j++){
-// 			row += field[i][j] + '|';
-// 		}
-// 		row += '\n+'
-
-// 		for( let j = 0; j < field[i].length; j++){
-// 			row += '-' + '+';
-// 		}
-// 		row += '\n'
-// 		html += row
-// 	}
-
-// 	console.clear();
-// 	console.log(html);
+// let gameField = [];
+// let winField = [[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6]];
+// for(let i = 0; i < 9; i++){
+// 	Fild.innerHTML += (
+// 		`<div class="cell" data-index='${i}'></div>`
+// 	)
+// 	Cells = document.querySelectorAll('.cell'); 
 // }
+
+// // change players, fill gameField
+// Cells.forEach(function(element){
+// 	element.addEventListener('click', function(event){
+// 		const Click = event.target;
+
+// 		if(Click === '') {
+// 			if (Click.innerHTML === ''){
+// 				if( sb === '0'){
+// 					Player.innerHTML = 'Ходят крестики';
+// 					sb = '1';
+// 					Click.classList.add('zero');
+// 					gameField[Click.getAttribute('data-index')] = 'x';
+// 				} else if (sb === '1' ){
+// 					sb = '0';
+// 					Player.innerHTML = 'Ходят нолики';
+// 					Click.classList.add('cross');
+// 					gameField[Click.getAttribute('data-index')] = 'o';
+// 				}
+// 				console.log(gameField);
+// 			}
+// 		}
+				
+// 	})
+		
+// })
